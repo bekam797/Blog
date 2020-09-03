@@ -3,12 +3,14 @@ import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
 
 import Layout from '../components/layout';
+import SEO from '../components/seo';
 
 const Template = ({ data }) => {
   const post = data.markdownRemark;
 
   return (
     <Layout>
+      <SEO title={post.frontmatter.title} />
       <div>
         <Link to="/">go back</Link>
         <h1>{post.frontmatter.title}</h1>
