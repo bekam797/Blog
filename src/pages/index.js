@@ -1,15 +1,42 @@
+/* eslint-disable arrow-parens */
+/* eslint-disable react/prop-types */
 import React from 'react';
-// import { Link } from 'gatsby';
-
+import { Link, graphql } from 'gatsby';
 import Layout from '../components/layout';
-// import Image from '../components/image';
-import SEO from '../components/seo';
 
-const IndexPage = () => (
+const BlogPage = ({ data }) => (
   <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
+    <div>
+      <h1>posts</h1>
+      {data.allMarkdownRemark.edges.map(post => (
+        <div key={post.node.id}>
+          <h3>{post.node.frontmatter.title}</h3>
+          <small>
+            post by
+            {post.node.frontmatter.date}
+          </small>
+          <Link to={post.node.frontmatter.path}>Read More</Link>
+        </div>
+      ))}
+    </div>
   </Layout>
 );
 
-export default IndexPage;
+export const pageQuery = graphql`
+  query BlogindexQuery {
+    allMarkdownRemark {
+      edges {
+        node {
+          id
+          frontmatter {
+            date
+            path
+            title
+          }
+        }
+      }
+    }
+  }
+`;
+
+export default BlogPage;
