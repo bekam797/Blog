@@ -3,18 +3,18 @@ import PropTypes from 'prop-types';
 // import { useStaticQuery, graphql } from 'gatsby';
 import SEO from './seo';
 
-import Header from './header';
+import Toolbar from './Navigation/Toolbar/Toolbar';
 import './layout.css';
 
 const Layout = ({ children }) => (
   <>
     <SEO title="Home Page" />
-    <Header />
+    <Toolbar />
     <div
       style={{
         margin: '0 auto',
-        maxWidth: 960,
-        padding: '0 1.0875rem 1.45rem',
+        maxWidth: 1420,
+        padding: '25px',
       }}
     >
       <main>{children}</main>
