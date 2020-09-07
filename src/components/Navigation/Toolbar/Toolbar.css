@@ -1,0 +1,15 @@
+.MobileOnly {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .DesctopOnly {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .MobileOnly {
+    display: block;
+  }
+}
