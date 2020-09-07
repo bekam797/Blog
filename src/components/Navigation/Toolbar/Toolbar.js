@@ -7,7 +7,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Navigationitems from '../Navigationitems/Navigationitems';
 import SideDrawer from '../SideDrawer/SideDrawer';
-import LanguageDetector from '../../LanguageDetector/LanguageDetector';
+import LanguageSwitcher from '../../LanguageSwitcher/LanguageSwitcher';
 
 import './Toolbar.css';
 
@@ -50,7 +50,7 @@ const ToolbarComponent = () => {
               <Navigationitems />
             </div>
             <div className="DesctopOnly">
-              <LanguageDetector />
+              <LanguageSwitcher />
             </div>
             <div className="MobileOnly">
               <SideDrawer />
